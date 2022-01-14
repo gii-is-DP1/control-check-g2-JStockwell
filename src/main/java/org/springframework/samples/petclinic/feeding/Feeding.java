@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMin;
@@ -37,5 +38,6 @@ public class Feeding extends BaseEntity {
     Pet pet;
 
     @ManyToOne
+    @JoinColumn(name = "feeding_type_id")
     FeedingType feedingType;
 }
