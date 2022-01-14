@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotNull;
 
@@ -18,6 +19,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
+@Table(name = "feedings")
 public class Feeding extends BaseEntity {
     // Exercise 1
     @Column(name = "start_date")
@@ -32,5 +34,8 @@ public class Feeding extends BaseEntity {
 
     @ManyToOne
     @NotNull
-    Pet pet;   
+    Pet pet;
+
+    @ManyToOne
+    FeedingType feedingType;
 }
